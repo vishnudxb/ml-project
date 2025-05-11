@@ -41,3 +41,6 @@ jobs:
       
     - name: Run API tests
       run: python3 -m pytest tests/test_api.py -v
+
+    - name: Run Complete Pipeline
+      run: make all
