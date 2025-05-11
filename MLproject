@@ -1,0 +1,11 @@
+name: ml-project
+
+conda_env: environment.yml
+
+entry_points:
+  main:
+    parameters:
+      data_path: {type: string, default: data/processed.csv}
+      model_path: {type: string, default: models/model.pkl}
+      random_seed: {type: int, default: 42}
+    command: "python3 src/models/train.py --data {data_path} --output {model_path} --seed {random_seed}"

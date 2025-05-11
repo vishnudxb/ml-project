@@ -1,0 +1,43 @@
+name: ML CI Pipeline (Local Development)
+
+on:
+  push:
+    branches: [ main, dev ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+    
+    - name: Install dependencies
+      run: |
+        python3 -m pip install --upgrade pip
+        pip install -r requirements.txt
+    
+    - name: Configure DVC
+      run: |
+        dvc config core.analytics false
+        dvc config core.no_scm true
+        mkdir -p /tmp/dvc-storage
+        dvc remote add -d localremote /tmp/dvc-storage
+        
+    - name: Run data tests
+      run: python3 -m pytest tests/test_data.py -v
+        
+    - name: Run DVC pipeline
+      run: dvc repro
+      
+    - name: Run model tests
+      run: python3 -m pytest tests/test_model.py -v
+      
+    - name: Run API tests
+      run: python3 -m pytest tests/test_api.py -v
