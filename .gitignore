@@ -27,6 +27,8 @@ var/
 .dvc/cache
 .dvc/tmp
 .dvc/plots
+.dvcignore
+.dvc/
 ./src/data/__pycache__
 ./tests/__pycache__
 
