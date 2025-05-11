@@ -21,14 +21,14 @@ var/
 *.egg
 
 # DVC files
-/data/*
-!/data/raw.csv  # Allow the sample raw data to be committed
 !/data/.gitkeep
 /models/*
 !/models/.gitkeep
 /.dvc/cache
 /.dvc/tmp
 /.dvc/plots
+./src/data/__pycache__
+./tests/__pycache__
 
 # Local development
 .env
