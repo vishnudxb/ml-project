@@ -1,0 +1,11 @@
+{
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0,
+    "feature_importance": {
+        "feature_1": 0.30092933508290653,
+        "feature_2": 0.3534190745321698,
+        "feature_3": 0.3456515903849237
+    }
+}
