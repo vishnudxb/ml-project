@@ -20,9 +20,9 @@ var/
 .installed.cfg
 *.egg
 
-# DVC files
+# DVC files (for local testings only)
 !/data/.gitkeep
-/models/*
+!/models/*  
 !/models/.gitkeep
 /.dvc/cache
 /.dvc/tmp
