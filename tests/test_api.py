@@ -26,7 +26,7 @@ def api_server():
     
     # Start server
     server = subprocess.Popen(
-        ["python", "src/deploy/serve.py"],
+        ["python3", "src/deploy/serve.py"],
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE
     )
