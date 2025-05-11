@@ -97,7 +97,7 @@ Results are saved to `metrics/metrics.json`
 #### 4. Model Serving:
 
 `serve.py` provides a simple Flask API
-Test it with: `curl -X POST http://localhost:5000/predict -H "Content-Type: application/json" -d '{"features": [0.5, 0.1, 0.2]}'`
+Test it with: `curl -X POST http://localhost:5100/predict -H "Content-Type: application/json" -d '{"features": [0.5, 0.1, 0.2]}'`
 
 
 ### Optional Components
