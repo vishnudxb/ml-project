@@ -24,9 +24,9 @@ var/
 !/data/.gitkeep
 !/models/*  
 !/models/.gitkeep
-/.dvc/cache
-/.dvc/tmp
-/.dvc/plots
+.dvc/cache
+.dvc/tmp
+.dvc/plots
 ./src/data/__pycache__
 ./tests/__pycache__
 
