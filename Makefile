@@ -13,7 +13,7 @@ setup:
 
 # Data preparation and validation
 data-validation:
-	python -m pytest tests/test_data.py -v
+	python3 -m pytest tests/test_data.py -v
 
 # Model training stage
 train: data-validation
@@ -23,19 +23,19 @@ train: data-validation
 evaluate: train
 	mkdir -p metrics
 	dvc repro evaluate
-	python -m pytest tests/test_model.py -v
+	python3 -m pytest tests/test_model.py -v
 	@echo "Model metrics:"
 	@cat metrics/metrics.json
 
 # Test API endpoint
 test-api: evaluate
-	python -m pytest tests/test_api.py -v
+	python3 -m pytest tests/test_api.py -v
 
 # Deploy model locally as a Flask API
 deploy: test-api
 	mkdir -p deploy
 	cp models/model.pkl deploy/
-	cd deploy && python ../src/deploy/serve.py
+	cd deploy && python3 ../src/deploy/serve.py
 
 # Run entire pipeline
 all: setup data-validation train evaluate test-api
