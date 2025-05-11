@@ -43,7 +43,7 @@ htmlcov/
 .ipynb_checkpoints
 
 # ML specific
-metrics/
+!metrics/
 logs/
 deploy/*.pkl
 
