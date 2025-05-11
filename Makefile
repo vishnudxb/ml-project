@@ -5,7 +5,7 @@
 # First-time setup
 setup:
 	pip install -r requirements.txt
-	dvc init --no-scm
+	dvc init --no-scm -f
 	dvc config core.analytics false
 	mkdir -p /tmp/dvc-storage
 	dvc remote add -d localremote /tmp/dvc-storage
